@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="xpto.css">
+    <title>XPTO - CHAMADOS</title>
+</head>
+
+<body onload="carregarTodos()">
+    <header>
+        <h1>XPTO - CHAMADOS</h1>
+        <hr />
+        <button onclick="modais.setAttribute('style','display:flex');modalNovo.setAttribute('style','display:block');">Criar</button>   
+        <hr />
+    </header>
+    <main>
+        <table>
+            <thead>
+                <tr>
+                    <td>Tipo</td>
+                    <td>Severidade</td>
+                    <td>Descricao</td>
+                    <td>Data</td>
+                    <td>Hora</td>
+                    <td>Hora_Inicio</td>
+                    <td>Hora_Fim</td>
+                    <td>Destino</td>
+                    <td>
+                    <button onclick="abrirChamado()">*</button>
+                    <button onclick="abrirChamado()">-</button>
+                </td>
+                    
+                </tr>
+            </thead>
+            <tbody id="creditos"></tbody>
+        </table>
+    </main>
+    
+    
+    
+    
+    
+    
+    
+    <div id="modais">
+        <div id="modalNovo">
+            <div class="modalHeader">
+                <h3>Criar Chamado</h3>
+                <button
+                    onclick="modais.setAttribute('style','display:none');modalNovo.setAttribute('style','display:none');">x</button>
+            </div>
+            <div class="modalForm">
+                Descrição:
+                <input type="text" id="descricao" required>
+                
+                Tipo:
+                    <form id="tipo">
+                        <INPUT TYPE="RADIO" NAME="OPCAO" VALUE="op1"> Incidente
+                        <INPUT TYPE="RADIO" NAME="OPCAO" VALUE="op2"> Solicitação
+                        <INPUT TYPE="RADIO" NAME="OPCAO" VALUE="op2"> Mudança
+                     </form>
+                 Severidade:
+                 <form id="Severidade">
+                     <INPUT TYPE="RADIO" NAME="OPCAO" VALUE="op1"> 3- Normal
+                     <INPUT TYPE="RADIO" NAME="OPCAO" VALUE="op2"> 2- Grave
+                     <INPUT TYPE="RADIO" NAME="OPCAO" VALUE="op2"> 1- Urgente
+                  </form>     
+                  Destino:
+                  <form id="Destino">
+                      <INPUT TYPE="RADIO" NAME="OPCAO" VALUE="op1"> Suporte
+                      <INPUT TYPE="RADIO" NAME="OPCAO" VALUE="op2"> Almoxarifado
+                      <INPUT TYPE="RADIO" NAME="OPCAO" VALUE="op2"> Financeiro
+                   </form>     
+
+                   
+
+ 
+               
+            </div>
+            <div class="modalFooter">
+                <button onclick="abrirChamado()">Criar</button>
+            </div>
+        </div>
+        
+        
+        <div id="modalMsg">
+            <div class="modalHeader">
+                <h3>Mensagem do sistema:</h3>
+                <button
+                    onclick="modais.setAttribute('style','display:none');modalMsg.setAttribute('style','display:none');">Fechar</button>
+            </div>
+            <p id="msg"></p>
+        </div>
+    </div>
+</body>
+<script src="xpto.js"></script>
+
+</html>
